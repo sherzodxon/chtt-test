@@ -1,0 +1,59 @@
+.card {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  animation: enter 0.18s ease-out;
+}
+
+.legend {
+  display: flex;
+  gap: 10px;
+  float: left;
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.legend + * {
+  clear: both;
+}
+
+.number {
+  flex: none;
+  color: var(--blue-500);
+}
+
+.text {
+  min-width: 0;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .legend {
+    font-size: 19px;
+  }
+
+  .options {
+    gap: 10px;
+  }
+
+  .legend {
+    margin-bottom: 20px;
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}

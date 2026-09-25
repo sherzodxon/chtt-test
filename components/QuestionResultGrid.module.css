@@ -1,0 +1,60 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 52px;
+  border: 1.5px solid;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.number {
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+}
+
+.mark {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.correct {
+  border-color: #bfe5cf;
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.wrong {
+  border-color: #f6c9c5;
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+@media (max-width: 400px) {
+  .grid {
+    gap: 6px;
+  }
+
+  .cell {
+    gap: 4px;
+    height: 46px;
+  }
+
+  .number {
+    font-size: 15px;
+  }
+
+  .mark {
+    font-size: 15px;
+  }
+}

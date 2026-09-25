@@ -1,0 +1,71 @@
+.figure {
+  margin: 0 0 20px;
+}
+
+.trigger {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #f8fafc;
+  cursor: zoom-in;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(360px, 42vh);
+  object-fit: contain;
+}
+
+.zoomHint {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgb(10 46 71 / 0.75);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.trigger:hover .zoomHint,
+.trigger:focus-visible .zoomHint {
+  opacity: 1;
+}
+
+.lightbox {
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 16px;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  text-align: center;
+  cursor: zoom-out;
+}
+
+.lightbox::backdrop {
+  background: rgb(10 46 71 / 0.7);
+}
+
+.full {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 140px);
+  margin: 0 auto;
+}
+
+.close {
+  margin-top: 12px;
+  min-height: 44px;
+}

@@ -1,0 +1,123 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 28px 32px;
+  text-align: center;
+}
+
+.passed {
+  --accent: var(--success);
+  --accent-soft: var(--success-bg);
+  background: linear-gradient(180deg, var(--success-bg) 0%, var(--surface) 100%);
+}
+
+.failed {
+  --accent: var(--danger);
+  --accent-soft: var(--danger-bg);
+  background: linear-gradient(180deg, var(--danger-bg) 0%, var(--surface) 100%);
+}
+
+.heading {
+  color: var(--accent);
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.message {
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.student {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.score {
+  position: relative;
+  width: 168px;
+  height: 168px;
+  margin-top: 20px;
+}
+
+.ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ringTrack,
+.ringValue {
+  fill: none;
+  stroke-width: 11;
+}
+
+.ringTrack {
+  stroke: var(--accent-soft);
+}
+
+.ringValue {
+  stroke: var(--accent);
+  stroke-linecap: round;
+  animation: fill 0.7s ease-out;
+}
+
+.scoreText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentage {
+  color: var(--accent);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.fraction {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 18px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.reason {
+  margin-top: 20px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--orange-50);
+  color: var(--orange-600);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@keyframes fill {
+  from {
+    stroke-dashoffset: 339.29;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary {
+    padding: 28px 16px 24px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .student {
+    font-size: 19px;
+  }
+}

@@ -1,0 +1,95 @@
+.option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 64px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: pointer;
+  transition:
+    border-color 0.12s ease,
+    background-color 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.option:hover {
+  border-color: var(--blue-200);
+  background: #f8fbfe;
+}
+
+.option:has(.input:focus-visible) {
+  box-shadow: var(--focus-ring);
+}
+
+.option[data-checked] {
+  border-color: var(--blue-500);
+  background: var(--blue-50);
+  box-shadow: inset 0 0 0 1px var(--blue-500);
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.letter {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 10px;
+  color: var(--text-muted);
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.12s ease;
+}
+
+.option[data-checked] .letter {
+  border-color: var(--blue-500);
+  background: var(--blue-500);
+  color: #fff;
+}
+
+.text {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.check {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border-strong);
+  border-radius: 50%;
+  transition: all 0.12s ease;
+}
+
+.option[data-checked] .check {
+  border: 6px solid var(--blue-500);
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .option {
+    min-height: 58px;
+    gap: 12px;
+    padding: 10px 12px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .letter {
+    width: 32px;
+    height: 32px;
+  }
+}
